@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Get Started — CallLeah</title>
+<meta name="robots" content="noindex,follow" />
+<meta name="description" content="Book a consultation to configure CallLeah for your service business." />
+<link rel="canonical" href="https://callleah.com/get-started.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">
+<link rel="stylesheet" href="css/get-started.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="dot"></span><span class="wordmark">Call<span class="accent-text">Leah</span></span></a>
+    <a href="index.html" class="nav-exit">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to CallLeah
+    </a>
+  </div>
+</header>
+
+<div class="page-head wrap">
+  <h1 id="pageHeading">Let's Build Your AI Receptionist</h1>
+  <p id="pageSub">Tell us a little about your business and book a quick consultation. We'll discuss your needs and show you how CallLeah can be customised for your business.</p>
+</div>
+
+<nav class="progress" aria-label="Onboarding progress">
+  <div class="progress-step active" data-progress="1">
+    <div class="progress-circle" id="pc-1">1</div>
+    <div class="progress-label">Your Details</div>
+  </div>
+  <div class="progress-step" data-progress="2">
+    <div class="progress-circle" id="pc-2">2</div>
+    <div class="progress-label">Schedule</div>
+  </div>
+  <div class="progress-step" data-progress="3">
+    <div class="progress-circle" id="pc-3">3</div>
+    <div class="progress-label">Confirmation</div>
+  </div>
+</nav>
+
+<main class="flow wrap">
+
+  <!-- ================= STEP 1 — YOUR DETAILS ================= -->
+  <section class="step-panel active" id="step-1">
+    <div class="card">
+      <form id="detailsForm" novalidate>
+
+        <div class="form-section">
+          <h3>Your Details</h3>
+          <p class="section-sub">So we know who we're speaking with.</p>
+
+          <div class="field" id="field-fullName">
+            <label for="fullName">Full Name <span class="req">*</span></label>
+            <input type="text" id="fullName" name="fullName" autocomplete="name" />
+            <div class="field-error">Please enter your full name.</div>
+          </div>
+
+          <div class="field" id="field-email">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" />
+            <div class="field-error">Please enter a valid email address.</div>
+          </div>
+
+          <div class="field" id="field-phone">
+            <label for="phone">Phone Number <span class="opt">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" />
+            <div class="field-error" id="phoneError">Please enter a valid phone number.</div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>About Your Business</h3>
+          <p class="section-sub">Helps us tailor the consultation to your business.</p>
+
+          <div class="field" id="field-businessType">
+            <label>What type of business do you run? <span class="req">*</span></label>
+            <div class="option-grid" id="businessTypeGrid">
+              <!-- populated by JS -->
+            </div>
+            <div class="field-error">Please select a business type.</div>
+            <div class="other-input" id="businessTypeOtherWrap" style="display:none;">
+              <input type="text" id="businessTypeOther" placeholder="Tell us your business type" />
+            </div>
+          </div>
+
+          <div class="field" id="field-needs">
+            <label>What would you like your AI receptionist to handle? <span class="req">*</span></label>
+            <div class="option-grid" id="needsGrid">
+              <!-- populated by JS -->
+            </div>
+            <div class="field-error">Please select at least one option.</div>
+            <div class="other-input" id="needsOtherWrap" style="display:none;">
+              <input type="text" id="needsOther" placeholder="Tell us what else you need" />
+            </div>
+          </div>
+
+          <div class="field" id="field-problem">
+            <label>What is your biggest problem with handling incoming calls? <span class="req">*</span></label>
+            <div class="option-grid" id="problemGrid">
+              <!-- populated by JS -->
+            </div>
+            <div class="field-error">Please select one option.</div>
+            <div class="other-input" id="problemOtherWrap" style="display:none;">
+              <input type="text" id="problemOther" placeholder="Tell us your biggest problem" />
+            </div>
+          </div>
+        </div>
+
+        <div class="step-actions" style="justify-content:flex-end;">
+          <button type="submit" class="btn btn-primary" id="step1Submit" disabled>Book My Consultation</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= STEP 2 — REAL CAL.COM SCHEDULE ================= -->
+  <section class="step-panel" id="step-2">
+    <div class="card">
+      <h2 style="font-size:24px; margin-bottom:6px;">Book Your Consultation</h2>
+      <p style="color:var(--ink-soft); font-size:15px; margin-bottom:22px;">
+        Choose a convenient time for a quick consultation. We'll discuss your business and how your AI receptionist can be customised for you.
+      </p>
+
+      <div class="live-banner">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M8 12.5l2.6 2.6L16.5 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span><strong>Live availability.</strong> Select an available time below. Availability comes directly from CallLeah's connected Cal.com calendar.</span>
+      </div>
+
+      <div class="calcom-shell" id="calcomShell">
+        <div class="cal-loading" id="calLoading">
+          <span class="loading-spin dark"></span>
+          Loading available consultation times…
+        </div>
+        <div id="my-cal-inline-30min" aria-label="Book your CallLeah consultation"></div>
+      </div>
+
+      <div class="cal-note">
+        <strong>Already booked?</strong> Cal.com will send the appointment confirmation and meeting details to the email address you enter.
+      </div>
+
+      <div class="error-banner" id="bookingError" role="alert" aria-live="polite">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span id="bookingErrorText">We couldn't load the booking calendar. Please refresh the page and try again.</span>
+      </div>
+
+      <div class="step-actions">
+        <a href="#" class="back-link" id="backToStep1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Edit your details
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STEP 3 — CONFIRMATION ================= -->
+  <section class="step-panel" id="step-3">
+    <div class="card confirm-hero">
+      <div class="confirm-check">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2>You're All Set! 🎉</h2>
+      <p class="lede">Your consultation has been booked.</p>
+      <p class="sub">We'll discuss your business, answer your questions, and plan how your AI receptionist can be customised for you.</p>
+
+      <div class="confirm-details" id="confirmDetails">
+        <!-- populated by JS -->
+      </div>
+
+      <div class="confirm-actions">
+        <a href="index.html" class="btn btn-primary">Back to CallLeah</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
+<script src="js/get-started.js"></script>
+</body>
+</html>

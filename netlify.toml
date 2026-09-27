@@ -1,0 +1,8 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/cal-webhook"
+  to = "/.netlify/functions/cal-webhook"
+  status = 200
